@@ -1,13 +1,47 @@
-House Styles Redux
-==================
+Segmented CSS circles generator in Less
+=======================================
 
-Version of the house styles written primarily for standalone front end builds. Key features:
+Less CSS mixin to generate interactive segmented circles using only CSS. This repo is intended as a working demonstration of what is possible with this mixin, if you want to just jump right in and get started I recommend you incorporate [this Less file] (src/static/less/circles.less) into your own project.
 
-- gulp outputs only what is required for the build to the build/ directory, and deletes it on rebuild.
-- CSS now only uses one stylesheet, containing media queries for tablet and mobile.
-- Directory structure is a bit cleaner.
-- Images should be put in src/static/img/
-- Anything not CSS/JS/images should go in src/static/assets/ e.g. fonts, videos, other files.
+Features
+--------
+
+The mixin allows for generation of circles containing any number of segments from 4 upwards, although most browsers start to have CSS rendering issues if you try more than 12 segments. Hover effects to expand circle segments on mouseover are included but can be overridden or removed if not required.
+
+In addition, the mixin has options to allows you to add a circle inside your circle, to make a ring. There is also a further option with a ring circle to make the hover effect appear as if the segments are moving out from the circle rather than just expanding.
+
+Usage
+-----
+
+In your Less, apply the mixin to your element as follows.
+
+```html
+.yourcustomcircle {
+	.gencircle(@numSegments,@donut: no,@donutSize: 50%,@donutStatic: no);
+}
+```
+
+Options are:
+
+- @numSegments: the number of segments your circle should have. Required field, must be 4 or more.
+- @donut: Optional value. Set to yes if you want your circle to be a ring.
+- @donutSize: Optional value. Defaults to 50%. Set to the size the ring should be.
+- @donutStatic: Optional value. Set to yes to have segments appear to move away from the circle on hover, rather than simply expand.
+
+Add markup as follows:
+
+```html
+<div class="yourcustomcircle">
+	<div class="segmentwrapper segment1">
+		<div class="segment"><div class="inner"></div></div>
+	</div>
+	<div class="segmentwrapper segment2">
+		<div class="segment"><div class="inner"></div></div>
+	</div>
+	<!-- add in each required segment as above, incrementing the segment class number as shown -->
+</div>
+```
+
 
 
 Use of Gulp
