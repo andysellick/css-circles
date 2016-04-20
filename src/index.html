@@ -6,32 +6,30 @@
     <meta name="viewport" content="initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="static/css/styles.min.css"/>
     <style>
-	    html {
-	        -webkit-font-smoothing: antialiased;
-	        -moz-osx-font-smoothing: grayscale;
-	    }
-	    body {
-	        font-family:Arial, Verdana, sans-serif;
-	        font-size: 100%;
-	        color:#333333;
-	    }
+		html {
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+		body {
+			font-family:Arial, Verdana, sans-serif;
+			font-size: 100%;
+			color:#333333;
+		}
 		.clearfix:before { content: ''; display: block; }
-	    .clearfix:after { content: ''; display: table; clear: both; }
-    	.container {
+		.clearfix:after { content: ''; display: table; clear: both; }
+		.container {
 			max-width:1000px;
 			margin:0 auto;
-    	}
+		}
     	.span4 {
-    		float:left;
-    		width:33%;
+			float:left;
+			width:33%;
     	}
     </style>
 </head>
 
 <body>
     <div class="container">
-    	<p></p>
-    	
     	<p>Basic segmentation.</p>
 
     	<div class="examplewrapper clearfix">
@@ -253,9 +251,7 @@
 
 		</div>
 		</div>
-		
-		<p>Improvements</p>
-		<p>Each circle currently uses three nested elements per segment, which is a lot of elements. It might be possible to reduce this number with increased use of pseudo elements but I've left it as it is currently to allow for more flexible reuse. For example, you may wish to use :before and :after to add your own styling, perhaps in the form of graphics or text attached to the outside of each segment.</p>
+
 	</div>
 
 </body>
