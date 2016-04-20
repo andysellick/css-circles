@@ -18,7 +18,7 @@
 	/* Number of segments is the only required argument. Cannot accept a number below 4. Anything above 12 starts to render badly. */
 	/* If @donut is set to yes, the circle will be rendered as a ring (defaults to white, you can set your own background if needed) */
 	/* If @donutStatic is set to yes, the segments of the ring will appear to move outwards when hovered */
-    @transpeed: 0.3s;
+	@transpeed: 0.3s;
 
 	.gencircle(@numSegments,@donut: no,@donutSize: 50%,@donutStatic: no){
 		@segmentAngle: 360 / @numSegments;
@@ -34,9 +34,9 @@
 
 		.segment {
 			.transform( skewX(~"@{skew}deg") );
-			.inner {
-				.transform( skewX(~"-@{skew}deg") );
-				&:hover {
+				.inner {
+					.transform( skewX(~"-@{skew}deg") );
+					&:hover {
 					.transform( skewX(~"-@{skew}deg") scale(1.1) );
 				}
 			}
@@ -64,7 +64,7 @@
 		@skew: 90 - @segmentAngle;
 		.staticdonut(@donutSize,@skew);
 	}
-	
+
 	/* classes that are needed for the circle but don't need to be repeated for every use of the mixin */
 	.segmentwrapper {
 		position:absolute;
