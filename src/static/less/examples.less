@@ -1,0 +1,76 @@
+
+	.examplewrapper {
+        .vertical-gradient( #d9d9d9, 0%, #FFFFFF, 100% );
+        .border-box();
+	}
+
+	@segGrey: #7e7e7e;
+	@segGreen: #60a058;
+	@segBlue: #93c1d7;
+	@segYellow: #d7d193;
+	@segWhite: #d5e5e4;
+	@segBrown: #96814a;
+
+	.circle4 {
+		.gencircle(4);
+		.segment1 .inner { background:@segBrown; }
+		.segment2 .inner { background:@segWhite; }
+		.segment3 .inner { background:@segYellow; }
+		.segment4 .inner { background:@segBlue; }
+	}
+	.circle5 {
+		.gencircle(5);
+		.segment1 .inner { background:@segWhite; }
+		.segment2 .inner { background:@segYellow; }
+		.segment3 .inner { background:@segBrown; }
+		.segment4 .inner { background:@segBlue; }
+		.segment5 .inner { background:@segGreen; }
+	}
+	.circle6 {
+		.gencircle(6);
+		.segment1 .inner { background:@segWhite; }
+		.segment2 .inner { background:@segYellow; }
+		.segment3 .inner { background:@segBrown; }
+		.segment4 .inner { background:@segBlue; }
+		.segment5 .inner { background:@segGreen; }
+		.segment6 .inner { background:@segGrey; }
+	}
+	.circleRad {
+		.gencircle(6,yes,25%);
+		.segment1 .inner { background:@segYellow; }
+		.segment2 .inner { background:@segGrey; }
+		.segment3 .inner { background:@segYellow; }
+		.segment4 .inner { background:@segGrey; }
+		.segment5 .inner { background:@segYellow; }
+		.segment6 .inner { background:@segGrey; }
+		&:after {
+			background:@segGrey;
+			border:solid 10px @segYellow;
+		}
+	}
+	
+	.alternateColours(){
+		.segmentwrapper {
+			&:nth-child(2n + 2){
+				.inner {
+					background:gray;
+				}
+			}
+		}
+	}
+
+	.circle8innersmall {
+		.gencircle(8,yes);
+		.alternateColours();
+	}
+	.circle8innerlarge {
+		.gencircle(8,yes,80%);
+		.alternateColours();
+	}
+	.circle8innerexpand {
+		.gencircle(8,yes,80%,yes);
+		.alternateColours();
+	}
+
+
+
