@@ -47,7 +47,7 @@ Add markup as follows:
 Use of Gulp
 ------------  
 
-There is a `gulpfile.js` within this repository to make development much quicker for the house styles. All you need to do is:
+There is a `gulpfile.js` within this repository to make development much quicker. All you need to do is:
 * Install Node (http://nodejs.org) & Gulp (https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)  
 * Run `npm run setup`  
 This will install all the dependencies found in `package.json` (The `node_modules` folder that is generated when you run this command should be created on a case-by-case basis and not pushed to a repository), install the Bower dependencies found in `package.json` and run the local server through the `gulp` command.
