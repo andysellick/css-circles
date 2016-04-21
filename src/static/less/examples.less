@@ -35,29 +35,6 @@
 		.segment5 .inner { background:@segGreen; }
 		.segment6 .inner { background:@segGrey; }
 	}
-	.circleRad {
-		.gencircle(6,yes,25%);
-		.segment1 .inner { background:@segYellow; }
-		.segment2 .inner { background:@segGrey; }
-		.segment3 .inner { background:@segYellow; }
-		.segment4 .inner { background:@segGrey; }
-		.segment5 .inner { background:@segYellow; }
-		.segment6 .inner { background:@segGrey; }
-		&:after {
-			background:@segGrey;
-			border:solid 10px @segYellow;
-		}
-	}
-	
-	.alternateColours(){
-		.segmentwrapper {
-			&:nth-child(2n + 2){
-				.inner {
-					background:gray;
-				}
-			}
-		}
-	}
 
 	.circle8innersmall {
 		.gencircle(8,yes);
@@ -72,5 +49,100 @@
 		.alternateColours();
 	}
 
+	.circleRad {
+		.gencircle(6,yes,25%);
+		.segment1 .inner { background:@segYellow; }
+		.segment2 .inner { background:@segGrey; }
+		.segment3 .inner { background:@segYellow; }
+		.segment4 .inner { background:@segGrey; }
+		.segment5 .inner { background:@segYellow; }
+		.segment6 .inner { background:@segGrey; }
+		&:after {
+			background:@segGrey;
+			border:solid 10px @segYellow;
+		}
+	}
 
+	.alternateColours(){
+		.segmentwrapper {
+			&:nth-child(2n + 2){
+				.inner {
+					background:gray;
+				}
+			}
+		}
+	}
+	
+	@time: 8s;
+
+	.circleCog,
+	.circleCog2 {
+		.gencircle(8,yes,60%);
+		background:#333333;
+		-webkit-animation: anim1 @time infinite forwards; /* Safari 4+ */
+		-moz-animation:    anim1 @time infinite forwards; /* Fx 5+ */
+		-o-animation:      anim1 @time infinite forwards; /* Opera 12+ */
+		animation:         anim1 @time infinite forwards; /* IE 10+, Fx 29+ */
+
+
+		.segmentwrapper {
+			.segment {
+				.inner {
+					&:after {
+						content:"";
+						position:absolute;
+						top:22%;
+						left:-4%;
+						width:24%;
+						height:19%;
+						background:#333333;
+						.transform( rotate(24deg) );
+					}
+					&:hover {
+						//.transform( none );
+					}
+				}
+			}
+		}
+	}
+	
+	.circleCog2 {
+		left:10%;
+		top:40%;
+		width:40%;
+		height:40%;
+		-webkit-animation: anim2 @time infinite forwards; /* Safari 4+ */
+		-moz-animation:    anim2 @time infinite forwards; /* Fx 5+ */
+		-o-animation:      anim2 @time infinite forwards; /* Opera 12+ */
+		animation:         anim2 @time infinite forwards; /* IE 10+, Fx 29+ */
+	}
+
+    @-webkit-keyframes anim1 {.turn;}
+    @-moz-keyframes anim1 {.turn;}
+    @-ms-keyframes anim1 {.turn;}
+    @-o-keyframes anim1 {.turn;}
+    @keyframes anim1 {.turn;}
+
+    @-webkit-keyframes anim2 {.turn2;}
+    @-moz-keyframes anim2 {.turn2;}
+    @-ms-keyframes anim2 {.turn2;}
+    @-o-keyframes anim2 {.turn2;}
+    @keyframes anim2 {.turn2;}
+
+    .turn(){
+        0%   {
+            .transform( rotate(0deg) );
+        }
+        100% {
+            .transform( rotate(360deg) );
+        }
+    }
+    .turn2(){
+        0%   {
+            .transform( rotate(0deg) );
+        }
+        100% {
+            .transform( rotate(-360deg) );
+        }
+    }
 

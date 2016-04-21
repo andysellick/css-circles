@@ -34,10 +34,21 @@
 
 		.segment {
 			.transform( skewX(~"@{skew}deg") );
-				.inner {
-					.transform( skewX(~"-@{skew}deg") );
-					&:hover {
+			.inner {
+				.transform( skewX(~"-@{skew}deg") );
+				&:hover {
 					.transform( skewX(~"-@{skew}deg") scale(1.1) );
+				}
+			}
+		}
+
+		&.nohover {
+			.segment {
+				.inner {
+					cursor:default;
+					&:hover {
+						.transform( skewX(~"-@{skew}deg") );
+					}
 				}
 			}
 		}

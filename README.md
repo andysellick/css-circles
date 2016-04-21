@@ -28,6 +28,8 @@ Options are:
 - @donutSize: Optional value. Defaults to 50%. Set to the size the ring should be.
 - @donutStatic: Optional value. Set to yes to have segments appear to move away from the circle on hover, rather than simply expand.
 
+Note: to remove the hover effect add the class of 'nohover' to the parent element.
+
 Add markup as follows:
 
 ```html
