@@ -19,11 +19,8 @@
 	/* If @donut is set to yes, the circle will be rendered as a ring (defaults to white, you can set your own background if needed) */
 	/* If @donutStatic is set to yes, the segments of the ring will appear to move outwards when hovered */
 	@transpeed: 0.3s;
-
-	.gencircle(@numSegments,@donut: no,@donutSize: 50%,@donutStatic: no){
-		@segmentAngle: 360 / @numSegments;
-		@skew: 90 - @segmentAngle;
-
+	
+	.csscircle {
 		position:absolute;
 		top:10%;
 		left:10%;
@@ -31,7 +28,11 @@
 		height:80%;
 		.border-radius( 100% );
 		.border-box();
+	}
 
+	.gencircle(@numSegments,@donut: no,@donutSize: 50%,@donutStatic: no){
+		@segmentAngle: 360 / @numSegments;
+		@skew: 90 - @segmentAngle;
 		.segment {
 			.transform( skewX(~"@{skew}deg") );
 			.inner {
@@ -74,6 +75,26 @@
 		@segmentAngle: 360 / @numSegments;
 		@skew: 90 - @segmentAngle;
 		.staticdonut(@donutSize,@skew);
+	}
+	.segmentmixin(@start,@size,@bg,@ts){
+		@rotate: @start + 90;
+		@skew2:@size - 90;
+		@skew1:-@skew2;
+
+		.transform( rotate(~"@{rotate}deg") );
+		.transition( all @ts ease );
+		.segment {
+			.transform( skewX(~"@{skew1}deg") );
+			.inner {
+				background:@bg;
+				.transform( skewX(~"@{skew2}deg") );
+				border:solid 0 @bg;
+				&:hover {
+					z-index:3;
+					.transform( skewX(~"@{skew2}deg") scale(1.1) );
+				}
+			}
+		}
 	}
 
 	/* classes that are needed for the circle but don't need to be repeated for every use of the mixin */

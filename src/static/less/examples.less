@@ -107,7 +107,7 @@
 		}
 	}
 	
-	.circleCog2 {
+	.csscircle.circleCog2 {
 		left:10%;
 		top:40%;
 		width:40%;
@@ -146,4 +146,36 @@
             .transform( rotate(-360deg) );
         }
     }
+
+	.piechart {
+		.segment1 {
+			.segmentmixin(0,145,#ff6868,@transpeed);
+		}
+		.segment2 {
+			.segmentmixin(145,80,#686fff,@transpeed);
+		}
+		.segment3 {
+			.segmentmixin(225,45,#b7e077,@transpeed);
+		}
+		.segment4 {
+			.segmentmixin(270,90,#ac68ff,@transpeed);
+		}
+	}
+	.piechart2 {
+		.segment1 {
+			.segment {
+				.transform( translateX(50%) translateY(50%) );
+			}
+			.inner {
+				.transform( translateX(-50%) translateY(-50%) );
+				background:#ff6868;
+			}
+		}
+		.segment2 {
+			.segmentmixin(225,45,#b7e077,@transpeed);
+		}
+		.segment3 {
+			.segmentmixin(270,90,#ac68ff,@transpeed);
+		}
+	}
 
